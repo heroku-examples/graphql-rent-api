@@ -1,0 +1,25 @@
+type Query {
+    helloWorld: String
+    listCustomers(limit: Int = 10): [Customer]
+    listProperties(limit: Int = 10): [Property]
+    findProperties(city: String, bedrooms: Int, bathrooms: Int): [Property]
+}
+
+type Customer {
+    firstName: String!
+    lastName: String!
+    email: String!
+    phone: String!
+}
+
+type Property {
+    address: String!
+    city: String!
+    state: String!
+    zipCode: String!
+    country: String!
+    bedrooms: Int!
+    bathrooms: Int!
+    area: Int!
+    description: String!
+}

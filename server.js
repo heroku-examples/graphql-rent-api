@@ -20,9 +20,12 @@ const graphqlServer = new ApolloServer({
   playground: true
 })
 
+app.get('/', (req, res) => {
+  res.redirect('/graphql')
+})
+
 graphqlServer.applyMiddleware({
-  app,
-  path: '/'
+  app
 })
 
 server.listen(port, () => {

@@ -4,10 +4,16 @@ const fs = require('fs')
 const path = require('path')
 const Sequelize = require('sequelize')
 const basename = path.basename(__filename)
-const config = require(path.join(__dirname, '..', 'config/config'))
 const db = {}
 
-const sequelize = new Sequelize(config.database, config.username, config.password, config)
+let config, sequelize
+if (process.env.NODE_ENV === 'local') {
+  config = require(path.join(__dirname, '..', 'config/config'))
+  sequelize = new Sequelize(config.database, config.username, config.password, config)
+} else {
+  config = process.env.DATABASE_URL
+  sequelize = new Sequelize(config)
+}
 
 fs
   .readdirSync(__dirname)

@@ -17,7 +17,8 @@ const graphqlServer = new ApolloServer({
       db
     }
   },
-  playground: true
+  playground: true,
+  introspection: true
 })
 
 app.get('/', (req, res) => {

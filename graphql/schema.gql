@@ -2,7 +2,7 @@ type Query {
     helloWorld: String
     listCustomers(limit: Int = 10): [Customer]
     listProperties(limit: Int = 10): [Property]
-    findProperties(city: String, bedrooms: Int, bathrooms: Int): [Property]
+    findProperties(city: String, bedrooms: Int, bathrooms: Int, limit: Int = 5): [Property]
 }
 
 type Customer {

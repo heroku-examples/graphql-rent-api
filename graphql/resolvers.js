@@ -11,11 +11,12 @@ const resolvers = {
     listProperties (_, { limit }, ctx) {
       return ctx.db.property.findAll({ limit })
     },
-    findProperties (_, { city, bathrooms, bedrooms }, ctx) {
+    findProperties (_, { city, bathrooms, bedrooms, limit }, ctx) {
       const where = {
         ...(city != null && { city }),
         ...(bathrooms != null && { bathrooms }),
-        ...(bedrooms != null && { bedrooms })
+        ...(bedrooms != null && { bedrooms }),
+        limit
       }
       return ctx.db.property.findAll({ where })
     }

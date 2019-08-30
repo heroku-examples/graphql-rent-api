@@ -15,10 +15,9 @@ const resolvers = {
       const where = {
         ...(city != null && { city }),
         ...(bathrooms != null && { bathrooms }),
-        ...(bedrooms != null && { bedrooms }),
-        limit
+        ...(bedrooms != null && { bedrooms })
       }
-      return ctx.db.property.findAll({ where })
+      return ctx.db.property.findAll({ where, limit })
     }
   }
 }

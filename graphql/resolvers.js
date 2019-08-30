@@ -17,7 +17,13 @@ const resolvers = {
         ...(bathrooms != null && { bathrooms }),
         ...(bedrooms != null && { bedrooms })
       }
-      return ctx.db.property.findAll({ where, limit })
+      return ctx.db.property.findAll({
+        where,
+        limit,
+        order: [
+          ['id', 'DESC']
+        ]
+      })
     }
   }
 }

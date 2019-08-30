@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === 'local') {
   config = require(path.join(__dirname, '..', 'config/config'))
   sequelize = new Sequelize(config.database, config.username, config.password, config)
 } else {
-  config = process.env.DATABASE_URL + "?ssl=true"
+  config = process.env.DATABASE_URL + '?ssl=true'
   sequelize = new Sequelize(config)
 }
 

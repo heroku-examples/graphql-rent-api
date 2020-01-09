@@ -22,4 +22,5 @@ type Property {
     bathrooms: Int!
     area: Int!
     description: String!
+    approved: Boolean!
 }

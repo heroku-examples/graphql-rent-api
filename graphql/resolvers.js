@@ -20,7 +20,8 @@ const resolvers = {
       const where = {
         ...(city != null && { city }),
         ...(bathrooms != null && { bathrooms }),
-        ...(bedrooms != null && { bedrooms })
+        ...(bedrooms != null && { bedrooms }),
+        approved: true
       }
       return ctx.db.property.findAll({
         where,

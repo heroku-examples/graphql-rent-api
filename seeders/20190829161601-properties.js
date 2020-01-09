@@ -16,6 +16,7 @@ module.exports = {
         bathrooms: faker.random.number(5),
         area: faker.random.number(3000),
         description: faker.random.words(5),
+        approved: true,
         createdAt: new Date(),
         updatedAt: new Date()
       })

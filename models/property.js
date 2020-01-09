@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     bedrooms: DataTypes.INTEGER,
     bathrooms: DataTypes.INTEGER,
     area: DataTypes.INTEGER,
-    description: DataTypes.STRING
+    description: DataTypes.STRING,
+    approved: DataTypes.BOOLEAN
   }, {})
   Property.associate = function (models) {
     // associations can be defined here

@@ -35,6 +35,9 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
+      approved: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

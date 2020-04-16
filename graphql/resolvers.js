@@ -9,11 +9,11 @@ const resolvers = {
       return ctx.db.customer.findAll({ limit })
     },
     listProperties (_, { limit }, ctx) {
-      return ctx.db.property.findAll({ 
+      return ctx.db.property.findAll({
         limit,
         where: {
           approved: true
-        } 
+        }
       })
     },
     findProperties (_, { city, bathrooms, bedrooms, limit }, ctx) {

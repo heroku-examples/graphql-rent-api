@@ -34,6 +34,11 @@ const resolvers = {
         ]
       })
     }
+  },
+  Mutation: {
+    createLead (_, { lead }, ctx) {
+      return ctx.db.lead.build(lead).save()
+    }
   }
 }
 

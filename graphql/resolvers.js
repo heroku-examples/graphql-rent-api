@@ -5,6 +5,9 @@ const resolvers = {
     helloWorld () {
       return 'Hello!'
     },
+    listLeads (_, __, ctx) {
+      return ctx.db.lead.findAll()
+    },
     listCustomers (_, { limit }, ctx) {
       return ctx.db.customer.findAll({ limit })
     },

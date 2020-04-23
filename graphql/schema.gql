@@ -3,6 +3,14 @@ type Query {
     listCustomers(limit: Int = 10): [Customer]
     listProperties(limit: Int = 10): [Property]
     findProperties(city: String, bedrooms: Int, bathrooms: Int, limit: Int = 5): [Property]
+    listLeads: [Lead]
+}
+
+type Lead {
+    firstName: String!
+    lastName: String!
+    company: String!
+    email: String
 }
 
 type Customer {

@@ -6,11 +6,22 @@ type Query {
     listLeads: [Lead]
 }
 
+type Mutation {
+    createLead(lead: LeadInput!): Lead!
+}
+
 type Lead {
     firstName: String!
     lastName: String!
     company: String!
     email: String
+}
+
+input LeadInput {
+    firstName: String!
+    lastName: String!
+    company: String!
+    email: String 
 }
 
 type Customer {
